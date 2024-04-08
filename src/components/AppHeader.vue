@@ -176,7 +176,8 @@ ul {
 }
 
 .distance {
-  gap: 10px;
+  gap: 20px;
+  color: white;
 }
 
 .right>div:first-child i {
