@@ -22,8 +22,10 @@ export default {
         </section>
 
         <section class="featured_posts">
-            <div class="container">
+            <div class="container ">
                 Posts
+
+
             </div>
 
         </section>
@@ -43,7 +45,6 @@ export default {
 }
 
 .featured_posts {
-    background-color: chartreuse;
     height: 200px;
 }
 
@@ -53,5 +54,10 @@ export default {
     margin: auto;
     border: 2px dotted black;
     height: 100%;
+}
+
+.identity {
+    width: 100%;
+    background-color: bisque;
 }
 </style>
