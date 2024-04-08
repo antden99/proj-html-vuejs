@@ -41,7 +41,23 @@ export default {
   </div>
   <div class="item_3">
     <div class="container">
-      NavBar
+
+      <div class="hamburg">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div class="menu">
+        <nav>
+          <li>ciao</li>
+          <li>ciao</li>
+          <li>ciao</li>
+          <li>ciao</li>
+          <li>ciao</li>
+        </nav>
+      </div>
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
     </div>
   </div>
 
@@ -54,16 +70,33 @@ export default {
   max-width: 1200px;
   margin: auto;
   height: 100%;
-  border: 1px dotted black;
 }
 
+.item_1 {
+  background-color: var(--primary-color);
+  height: 50px;
 
-.item_1,
+  & ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    font-size: 30px;
+    height: 100%;
+
+    >li:first-child {
+      background-color: #545453;
+      height: 100%;
+      color: white;
+    }
+  }
+}
+
 .item_3 {
   background-color: var(--primary-color);
   color: white;
   width: 100%;
   height: 50px;
+  font-size: 30px;
 }
 
 .item_2 {
@@ -75,6 +108,23 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+.item_3 {
+  & .container {
+    display: flex;
+    justify-content: space-around;
+
+    & div {
+      display: flex;
+      align-items: center;
+      width: 33.33%;
+    }
+
+    & .search {
+      flex-direction: row-reverse;
+    }
   }
 }
 
@@ -90,8 +140,8 @@ img.logo {
   height: 117px;
 }
 
-img.logo2{
-  width:715px;
+img.logo2 {
+  width: 715px;
   height: 90px;
   border-radius: 10px;
 }
@@ -115,7 +165,7 @@ ul {
   height: 100%;
 
   >li:first-child {
-    background-color: var(--fourth-colors);
+    background-color: #545453;
     height: 100%;
   }
 }
@@ -139,5 +189,12 @@ ul {
   text-align: center;
   line-height: 30px;
   border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
 }
 </style>
