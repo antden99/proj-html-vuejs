@@ -35,7 +35,7 @@ export default {
         <img src="/src/assets/img/logo_animetech.webp" alt="">
       </div>
       <div>
-        <img src="/src/assets/img/banner.webp" alt="" class="logo2">
+        <img src="/src/assets/img/header-banner.webp" alt="" class="logo2">
       </div>
     </div>
   </div>

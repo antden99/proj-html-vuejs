@@ -1,13 +1,17 @@
 <script>
 import AppSectionCards from './AppSectionCards.vue';
 import AppSectionLifestyle from './AppSectionLifestyle.vue';
+import AppSectionBanner from './AppSectionBanner.vue';
+
 
 export default {
     name: "AppMain",
 
     components: {
         AppSectionCards: AppSectionCards,
-        AppSectionLifestyle:AppSectionLifestyle
+        AppSectionLifestyle:AppSectionLifestyle,
+        AppSectionBanner:AppSectionBanner,
+
     }
 }
 
@@ -20,12 +24,8 @@ export default {
 
         <AppSectionLifestyle></AppSectionLifestyle>
 
-        <section class="banner">
-            <div class="container">
-                Banner
-            </div>
-
-        </section>
+        <AppSectionBanner></AppSectionBanner>
+        
 
         <section class="featured_posts">
             <div class="container ">
@@ -46,10 +46,7 @@ export default {
 
 
 
-.banner {
-    background-color: chocolate;
-    height: 100px;
-}
+
 
 .featured_posts {
     height: 200px;
