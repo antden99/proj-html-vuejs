@@ -24,17 +24,17 @@ export default {
                     {
                         image: "/src/assets/img/visit-france.webp",
                         title: "LIFESTYLE",
-                        numb:"3 POSTS",
+                        numb: "3 POSTS",
                     },
                     {
                         image: "/src/assets/img/travel-alone.webp",
                         title: "STORIES",
-                        numb:"5 POSTS",
+                        numb: "5 POSTS",
                     },
                     {
                         image: "/src/assets/img/best-places.webp",
                         title: "TRAVEL",
-                        numb:"6 POSTS",
+                        numb: "6 POSTS",
                     },
                 ],
 
@@ -62,8 +62,6 @@ export default {
             indexHover: null,
         }
     },
-    methods: {
-    }
 }
 </script>
 
@@ -107,11 +105,13 @@ export default {
         </div>
         <section class="image_cards">
             <div class="row">
-                <div class="col_2" v-for="(image, index) in listCards" @mouseenter="indexHover = index"
-                    @mouseout="indexHover = null">
+                <div class="col_2" v-for="image in listCards">
                     <div><img :src="image.image" alt=""></div>
-                    <div class="center text_color" :class="{border : index === indexHover}">{{ image.title }} <div v-if="index === indexHover" class="numb_posts">{{ image.numb }}</div></div>
-                    <div class="red_hover" v-if="index === indexHover"></div>
+                    <div class="center text_color border">
+                        {{ image.title }}
+                        <div class="numb_posts">{{ image.numb }}</div>
+                    </div>
+                    <div class="red_hover"></div>
                 </div>
             </div>
         </section>
@@ -243,6 +243,7 @@ i {
 
     &:hover {
         cursor: pointer;
+
     }
 
     & img {
@@ -277,7 +278,7 @@ i {
     }
 }
 
-.red_hover {
+.col_2:hover .red_hover {
     background-color: #ac303b;
     opacity: 0.5;
     width: 100%;
@@ -287,13 +288,20 @@ i {
     top: 0;
 }
 
-.border{
+.col_2:hover .border {
     border: 2px solid white;
     padding: 50px;
 }
 
 .numb_posts{
+    display: none;
+}
+
+.col_2:hover .numb_posts {
     font-size: 15px;
     text-align: center;
+    display: block;
 }
+
+
 </style>
