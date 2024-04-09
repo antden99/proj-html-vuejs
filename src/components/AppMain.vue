@@ -193,7 +193,6 @@ h2 {
 .row {
     display: flex;
     gap: 15px;
-    margin-bottom: 50px;
 
     .col {
         width: calc((100% / 12) * 4 - 15px);
