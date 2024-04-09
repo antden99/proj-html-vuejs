@@ -1,6 +1,42 @@
 <script>
+import AppElNavbar from './AppElNavbar.vue';
+
 export default {
   name: "AppHeader",
+
+  data() {
+    return {
+      elementsNavbar: [
+        {
+          fontA: "fa-solid fa-house",
+          link: "HOME",
+        },
+        {
+          fontA: "fa-solid fa-suitcase",
+          link: "LIFESTYLE",
+          arrowDown:"fa-solid fa-chevron-down",
+        }, {
+          fontA: "fa-solid fa-book-open-reader",
+          link: "STORIES",
+          arrowDown:"fa-solid fa-chevron-down",
+        }, {
+          fontA: "fa-solid fa-book",
+          link: "PAGES",
+          arrowDown:"fa-solid fa-chevron-down",
+        }, {
+          fontA: "fa-solid fa-user",
+          link: "ABOUT US",
+        },
+      ],
+      elementHamb : "fa-solid fa-bars",
+      elementSearch : "fa-solid fa-magnifying-glass"
+      
+    }
+  },
+
+  components: {
+    AppElNavbar: AppElNavbar,
+  }
 }
 
 </script>
@@ -43,19 +79,15 @@ export default {
     <div class="container">
 
       <div class="hamburg">
-        <i class="fa-solid fa-bars"></i>
+        <AppElNavbar :elFont="elementHamb"></AppElNavbar>
       </div>
       <div class="menu">
         <nav>
-          <li>ciao</li>
-          <li>ciao</li>
-          <li>ciao</li>
-          <li>ciao</li>
-          <li>ciao</li>
+          <AppElNavbar v-for="el in elementsNavbar" :elNav="el.link" :elFont="el.fontA" :arrow="el.arrowDown"></AppElNavbar>
         </nav>
       </div>
       <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <AppElNavbar :elFont="elementSearch"></AppElNavbar>
       </div>
 
     </div>
@@ -92,8 +124,7 @@ export default {
 }
 
 .item_3 {
-  background-color: var(--primary-color);
-  color: white;
+  color:var(--fourth-colors);
   width: 100%;
   height: 50px;
   font-size: 30px;
@@ -119,11 +150,21 @@ export default {
     & div {
       display: flex;
       align-items: center;
-      width: 33.33%;
     }
 
     & .search {
       flex-direction: row-reverse;
+      width: 25%;
+      list-style: none;
+    }
+
+    & .hamburg{
+      width: 25%;
+      list-style: none;
+    }
+
+    & .menu{
+      flex-grow: 1;
     }
   }
 }
@@ -197,5 +238,7 @@ nav {
   justify-content: space-between;
   width: 100%;
   list-style: none;
+  gap: 25px;
+  font-size: 15px;
 }
 </style>

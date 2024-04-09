@@ -42,7 +42,7 @@ export default {
                         image: "/src/assets/img/best-places.webp",
                         title: "TRAVEL"
                     },
-                ]
+                ],
         }
     }
 }
@@ -80,6 +80,7 @@ export default {
                                 <div class="margin_top">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Temporibus vero aperiam ab
                                     consectetur voluptate asperiores.</div>
+                                <div class="btn_read">Read More</div>
                             </div>
                         </div>
                     </div>
@@ -92,6 +93,7 @@ export default {
                                 <div class="margin_top">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Temporibus vero aperiam ab
                                     consectetur voluptate asperiores.</div>
+                                <div class="btn_read">Read More</div>
                             </div>
                         </div>
                     </div>
@@ -104,6 +106,7 @@ export default {
                                 <div class="margin_top">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Temporibus vero aperiam ab
                                     consectetur voluptate asperiores.</div>
+                                <div class="btn_read">Read More</div>
 
                             </div>
                         </div>
@@ -249,19 +252,35 @@ i {
 .col_2 {
     width: calc((100% / 12) * 6);
     position: relative;
+
     & img {
         width: 100%;
         border-radius: 10px;
     }
 
-    & .text_color{
+    & .text_color {
         color: white;
-        font-size: 20px;
+        font-size: 30px;
     }
 
-    & .center{
+    & .center {
         position: absolute;
-        top: 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.btn_read {
+    padding: 5px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+
+    &:hover {
+
+        cursor: pointer;
     }
 }
 </style>
