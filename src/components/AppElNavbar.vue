@@ -2,26 +2,26 @@
 
 export default {
     name: "AppEl",
-    
-    props: ["elNav","elFont","arrow"],
+
+    props: ["elNav", "elFont", "arrow"],
 }
 </script>
 
 <template>
-    <li><i :class="elFont" aria-hidden="true"></i> <a href="#">{{ elNav }}</a> <i v-if="arrow" :class="arrow"></i></li>
+    <li> <a href="#"><i :class="elFont" aria-hidden="true"></i>{{ elNav }} <i v-if="arrow" :class="arrow"></i></a></li>
 </template>
 
 <style scoped>
-a{
+a {
     color: var(--fourth-colors);
     text-decoration: none;
-}
-
-li{
-    color: var(--fourth-colors);
-    &:hover{
+    &:hover {
         cursor: pointer;
+        color: var(--primary-color);
     }
 }
 
+i {
+    margin: 0px 5px;
+}
 </style>

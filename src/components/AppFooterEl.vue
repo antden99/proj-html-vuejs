@@ -34,5 +34,9 @@ export default {
 a{
     text-decoration: none;
     color: white;
+
+    &:hover{
+        color: var(--fourth-colors);
+    }
 }
 </style>

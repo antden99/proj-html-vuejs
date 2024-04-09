@@ -122,6 +122,10 @@ button {
     border: none;
     cursor: pointer;
     margin-top: 15px;
+    &:hover{
+        color: var(--primary-color);
+        background-color: white;
+    }
 }
 .final_foot{
     display: flex;

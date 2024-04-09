@@ -231,6 +231,11 @@ ul {
   text-align: center;
   line-height: 30px;
   border-radius: 50%;
+
+  &:hover{
+    background-color: #545453;
+    cursor: pointer;
+  }
 }
 
 nav {
@@ -238,7 +243,6 @@ nav {
   justify-content: space-between;
   width: 100%;
   list-style: none;
-  gap: 25px;
   font-size: 15px;
 }
 </style>
