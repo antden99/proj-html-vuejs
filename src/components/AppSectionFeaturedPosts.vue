@@ -60,6 +60,29 @@ export default {
 
             ],
             indexHover: null,
+            slides: [
+                {
+                    image: 'src/assets/img/sddefault.webp',
+                    title: 'Overlord Season 4-Official Trailer 3 | AniTv',
+
+                }, {
+                    image: 'src/assets/img/season_2.jpg',
+                    title: 'Rent a Girlfriend Season 2-Official Trailer | AniTv',
+
+                }, {
+                    image: 'src/assets/img/trailer_3.jpeg',
+                    title: 'Unkle from Another World -Official Trailer | AniTv',
+
+                }, {
+                    image: 'src/assets/img/trailer_4.jpg',
+                    title: 'Prima Doll -Official Trailer | AniTv',
+
+                }, {
+                    image: 'src/assets/img/trailer_5.jpg',
+                    title: "Shoot! Goal To The Future-Official Trailer | AniTv",
+
+                },
+            ],
         }
     },
 }
@@ -94,10 +117,35 @@ export default {
 
             <section class="youtube_videos">
                 <div class="uploaded">
+                    <div class="line_episode">
+                        <div class="d_flex i_center"><img src="/src/assets/img/channels4_profile.jpg" alt="" class="logo_tv">
+                            <div>Overlord Season 4 - Official 3 | AniTV</div></div>
+                        <div class="d_flex ">
+                            <div class="font_i"><i class="fa-solid fa-clock" ></i>
+                                <div>Guarda di più</div>
+                            </div>
+                            <div class="font_i"><i class="fa-solid fa-share"></i>
+                                <div>Condividi</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div >
+                            <button class="btn_youtube">Guarda su <i class="fa-brands fa-youtube"></i>YouTube</button>
+                        </div>
+                    <img src="/src/assets/img/sddefault.webp" alt="">
                     <div class="play"><i class="fa-brands fa-youtube"></i></div>
                 </div>
                 <div class="upload">
-                    antonio
+                    <div class="play_video">
+                        <div><i class="fa-solid fa-play"></i></div>
+                        <div>Video PlayList <div>1/7</div>
+                        </div>
+                    </div>
+                    <div v-for="(n, index) in slides" class="single_video">
+                        <div class="index_bord">{{ index }}</div>
+                        <div><img :src="n.image" alt="" class="min_img"></div>
+                        <div class="hover_title">{{ n.title }}</div>
+                    </div>
                 </div>
             </section>
 
@@ -153,6 +201,9 @@ h2 {
     color: #515554;
 }
 
+.i_center{
+    align-items: center;
+}
 .container .d_flex.distance>div:last-child i {
     width: 30px;
     height: 30px;
@@ -208,37 +259,56 @@ strong {
 }
 
 .uploaded {
-    width: 840px;
-    height: 550px;
-    background-image: url("/src/assets/img/sddefault.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 
-
     & .play {
-        position: absolute;
-        top: 270px;
-        left: 400px;
         width: 150px;
+        position: absolute;
+    }
+
+    & img {
+        width: 100%;
+    }
+
+    & .logo_tv {
+        border-radius: 50%;
+        object-fit: cover;
+        max-width: 70px;
     }
 }
 
 .upload {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.line_episode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .youtube_videos {
     display: flex;
 }
 
-i {
+.play {
     color: red;
     font-size: 80px;
 }
-
 .col_2 {
-    width: calc((100% / 12) * 6);
+    width: calc((100% / 12) * 12);
     position: relative;
 
     &:hover {
@@ -293,7 +363,7 @@ i {
     padding: 50px;
 }
 
-.numb_posts{
+.numb_posts {
     display: none;
 }
 
@@ -303,5 +373,86 @@ i {
     display: block;
 }
 
+.play_video {
+    display: flex;
+    flex-grow: 1;
+    background-color: #444444;
+    color: white;
+    border: 1px solid;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 5px;
 
+    & i {
+        font-size: 20px;
+        color: white;
+        margin-right: 10px;
+    }
+}
+
+.min_img {
+    max-width: 100px;
+    min-height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.single_video {
+    flex-grow: 1;
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: pointer;
+
+
+        .index_bord {
+            background-color: var(--primary-color);
+        }
+
+        .hover_title {
+            color: var(--primary-color);
+
+        }
+    }
+
+
+}
+
+.index_bord {
+    padding: 10px;
+    background-color: var(--fourth-colors);
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.font_i {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.m_left{
+    margin-left: auto;
+}
+
+.btn_youtube{
+    color: white;
+    padding: 10px 20px;
+    background-color:#121112;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    &:hover{
+        cursor: pointer;
+
+    }
+}
 </style>

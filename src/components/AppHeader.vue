@@ -48,7 +48,8 @@ export default {
         <ul>
           <li>News Update</li>
           <li><img class="prima" src="/src/assets/img/meal-time-150x150.webp" alt=""></li>
-          <li></li>
+          <li class="text_color">5:35</li>
+          <li class="text_color">THE</li>
         </ul>
       </div>
       <div class="right d_flex">
@@ -245,4 +246,15 @@ nav {
   list-style: none;
   font-size: 15px;
 }
+
+
+.text_color{
+  color: white;
+  font-size: 15px;
+  opacity: 0.5;
+  margin-left: 5px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+
 </style>

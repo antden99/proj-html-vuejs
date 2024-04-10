@@ -1,6 +1,29 @@
 <script>
 export default {
     name: "AppSectionLifestyle",
+
+    data(){
+        return{
+            colLists:[
+                {
+                    src:"/src/assets/img/success-story.webp",
+                    btn:"Stories",
+                    desc: "Traveling Alone Is Awesome",
+                },
+                {
+                    src:"/src/assets/img/best-places.webp",
+                    btn:"Lifestyle",
+                    desc: "Places For A Road Trip",
+                },
+                {
+                    src:"/src/assets/img/music-love.webp",
+                    btn:"Culture",
+                    desc: "Music The Love Of My Life",
+                },
+
+            ]
+        }
+    }
 }
 </script>
 
@@ -32,39 +55,16 @@ export default {
                     </div>
                 </div>
                 <div class="item_2">
-                    <div class="d_flex b_line center">
-                        <div>
-                            <img src="/src/assets/img/travel-alone-300x200.webp" alt="" class="right_img">
+                    <div class="d_flex b_line center" v-for="el in colLists">
+                        <div class="p_relative">
+                            <img :src="el.src" alt="" class="right_img">
+                            <button class="p_absolute">{{ el.btn }}</button>
                         </div>
                         <div class="margin_left">
                             <div class="font">
                                 <div><i class="fa-solid fa-user"></i> demo <i class="fa-regular fa-calendar-days"></i>
                                     December 25,2022</div>
-                                <div><strong>Traveling Alone Is Awesome</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d_flex b_line center">
-                        <div>
-                            <img src="/src/assets/img/best-places.webp" alt="" class="right_img">
-                        </div>
-                        <div class="margin_left">
-                            <div class="font">
-                                <div><i class="fa-solid fa-user"></i> demo <i class="fa-regular fa-calendar-days"></i>
-                                    December 25,2022</div>
-                                <div><strong>Traveling Alone Is Awesome</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d_flex center">
-                        <div>
-                            <img src="/src/assets/img/music-love.webp" alt="" class="right_img">
-                        </div>
-                        <div class="margin_left">
-                            <div class="font">
-                                <div><i class="fa-solid fa-user"></i> demo <i class="fa-regular fa-calendar-days"></i>
-                                    December 25,2022</div>
-                                <div><strong>Traveling Alone Is Awesome</strong></div>
+                                <div><strong>{{ el.desc }}</strong></div>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,6 @@ export default {
 
 img {
     width: 100%;
-    height: 440px;
     border-radius: 10px;
     opacity: 0.8;
 }
@@ -160,15 +159,19 @@ button {
     height: 120px;
 }
 
-.b_line {
-    border-bottom: 1px solid black;
-    padding-bottom: 22px;
+.item_2 > div:nth-child(2){
+    border-top: 1px solid;
+    padding: 20px 0px;
+    border-bottom: 1px solid;
 }
 
-.item_2>div:nth-child(2) {
-    padding-top: 22px;
+.item_2 > div:nth-child(1){
+   margin-bottom: 20px;
 }
 
+.item_2 > div:nth-child(3){
+   margin-top: 20px;
+}
 
 .margin_left {
     margin-left: 20px;
@@ -181,5 +184,19 @@ button {
 
 .center {
     align-items: center;
+}
+
+.p_relative{
+    position: relative;
+}
+
+.p_absolute{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+strong:hover{
+    color: var(--primary-color);
 }
 </style>
